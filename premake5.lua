@@ -32,7 +32,7 @@ project "GLFW"
 		
 			files
 	{
-		"src/win32*.h",
+		"src/win32*.c",
 		"src/wgl_context.c",
 		"src/egl_context.c",
 		"src/osmesa_context.c"
