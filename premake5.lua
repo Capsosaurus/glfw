@@ -30,13 +30,22 @@ project "GLFW"
 		}
 		
 		
-			files
-	{
+		files
+		{
 		"src/win32*.c",
 		"src/wgl_context.c",
 		"src/egl_context.c",
 		"src/osmesa_context.c"
-	}
+		}
+			
+		filter "configurations:Debug"
+			optimize "On"
+			runtime "Debug"
 
-	filter { "system:windows", "configurations:Release"}
-		buildoptions "/MT"
+		filter "configurations:Release"
+			optimize "On"
+			runtime "Release"
+
+		filter "configurations:Dist"
+			optimize "On"
+			runtime "Release"
