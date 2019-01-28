@@ -21,7 +21,6 @@ project "GLFW"
 
 	filter "system:windows"
 		cppdialect "C++11"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
