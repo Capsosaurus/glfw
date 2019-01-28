@@ -1,6 +1,8 @@
 project "GLFW"
 	kind "StaticLib"
 	language "C"
+	
+	staticruntime "Off"
 
 	targetdir (OutTargetDir)
 	objdir (OutObjDir)
@@ -26,7 +28,6 @@ project "GLFW"
 		{
 			"_GLFW_WIN32",
 			"_CRT_SECURE_NO_WARNINGS"
-
 		}
 		
 		
@@ -39,8 +40,9 @@ project "GLFW"
 		}
 			
 		filter "configurations:Debug"
-			optimize "On"
+			optimize "Debug"
 			runtime "Debug"
+
 
 		filter "configurations:Release"
 			optimize "On"
