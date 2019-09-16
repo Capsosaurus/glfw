@@ -36,7 +36,8 @@
 #include <stdlib.h>
 #include <math.h>
 
-#include <glad/glad.h>
+#include <glad/gl.h>
+#define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 
 #include <linmath.h>
@@ -165,7 +166,7 @@ void CrossProduct( vertex_t a, vertex_t b, vertex_t c, vertex_t *n )
    v2 = c.y - a.y;
    v3 = c.z - a.z;
 
-   n->x = u2 * v3 - v2 * v3;
+   n->x = u2 * v3 - v2 * u3;
    n->y = u3 * v1 - v3 * u1;
    n->z = u1 * v2 - v1 * u2;
 }
@@ -642,7 +643,7 @@ int main( void )
    glfwSetCursorPosCallback(window, cursor_position_callback);
 
    glfwMakeContextCurrent(window);
-   gladLoadGLLoader((GLADloadproc) glfwGetProcAddress);
+   gladLoadGL(glfwGetProcAddress);
    glfwSwapInterval( 1 );
 
    glfwGetFramebufferSize(window, &width, &height);
