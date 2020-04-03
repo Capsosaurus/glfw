@@ -1,11 +1,14 @@
-project "GLFW"
+project "glfw"
 	kind "StaticLib"
 	language "C"
 	
-	staticruntime "Off"
+	staticruntime "on"
 
-	targetdir (OutTargetDir)
-	objdir (OutObjDir)
+	--warnings "Extra"
+
+	targetdir ("%{OutputDir.bin}")
+	objdir ("%{OutputDir.obj}")
+
 
 	files
 	{
@@ -19,8 +22,18 @@ project "GLFW"
 		"src/window.c"
 	}
 
+	includedirs
+	{
+		"include"
+	}
+
+
+	defines
+	{
+		"_GLFW_USE_OPENGL",
+	}
+
 	filter "system:windows"
-		cppdialect "C++11"
 		systemversion "latest"
 
 		defines
@@ -28,25 +41,28 @@ project "GLFW"
 			"_GLFW_WIN32",
 			"_CRT_SECURE_NO_WARNINGS"
 		}
-		
-		
-		files
+
+		files 
 		{
-		"src/win32*.c",
-		"src/wgl_context.c",
-		"src/egl_context.c",
-		"src/osmesa_context.c"
+			"src/win32*.c",
+			"src/win32_joystick.c",
+			"src/wgl_context.c",
+			"src/egl_context.c",
+			"src/osmesa_context.c"
 		}
+		
+		links
+		{
 			
-		filter "configurations:Debug"
-			optimize "Debug"
-			runtime "Debug"
+		}
 
+	filter "configurations:Debug"
 
-		filter "configurations:Release"
-			optimize "On"
-			runtime "Release"
+		optimize "Debug"
+		runtime "Debug"
 
-		filter "configurations:Dist"
-			optimize "On"
-			runtime "Release"
+	filter "configurations:Release"
+
+		optimize "On"
+		runtime "Release"
+
