@@ -124,6 +124,8 @@ information on what to include when reporting a bug.
  - Added `GLFW_RESIZE_EW_CURSOR` alias for `GLFW_HRESIZE_CURSOR` (#427)
  - Added `GLFW_RESIZE_NS_CURSOR` alias for `GLFW_VRESIZE_CURSOR` (#427)
  - Added `GLFW_POINTING_HAND_CURSOR` alias for `GLFW_HAND_CURSOR` (#427)
+ - Added `GLFW_FEATURE_UNAVAILABLE` error for platform limitations (#1692)
+ - Added `GLFW_FEATURE_UNIMPLEMENTED` error for incomplete backends (#1692)
  - Updated the minimum required CMake version to 3.1
  - Disabled tests and examples by default when built as a CMake subdirectory
  - Bugfix: The CMake config-file package used an absolute path and was not
@@ -131,6 +133,8 @@ information on what to include when reporting a bug.
  - Bugfix: Video modes with a duplicate screen area were discarded (#1555,#1556)
  - Bugfix: Compiling with -Wextra-semi caused warnings (#1440)
  - Bugfix: Built-in mappings failed because some OEMs re-used VID/PID (#1583)
+ - Bugfix: Some extension loader headers did not prevent default OpenGL header
+   inclusion (#1695)
  - [Win32] Added the `GLFW_WIN32_KEYBOARD_MENU` window hint for enabling access
            to the window menu
  - [Win32] Added a version info resource to the GLFW DLL
