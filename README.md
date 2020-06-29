@@ -152,9 +152,11 @@ information on what to include when reporting a bug.
    invalid pointer
  - [Win32] Bugfix: Some synthetic key events were reported as `GLFW_KEY_UNKNOWN`
    (#1623)
+ - [Win32] Bugfix: Non-BMP Unicode codepoint input was reported as UTF-16
  - [Cocoa] Added support for `VK_EXT_metal_surface` (#1619)
  - [Cocoa] Added locating the Vulkan loader at runtime in an application bundle
  - [Cocoa] Moved main menu creation to GLFW initialization time (#1649)
+ - [Cocoa] Changed `EGLNativeWindowType` from `NSView` to `CALayer` (#1169)
  - [Cocoa] Removed dependency on the CoreVideo framework
  - [Cocoa] Bugfix: `glfwSetWindowSize` used a bottom-left anchor point (#1553)
  - [Cocoa] Bugfix: Window remained on screen after destruction until event poll
@@ -163,7 +165,8 @@ information on what to include when reporting a bug.
  - [Cocoa] Bugfix: Undecorated windows could not be iconified on recent macOS
  - [Cocoa] Bugfix: Touching event queue from secondary thread before main thread
    would abort (#1649)
- - [Cocoa] Use `CALayer` instead of `NSView` for `EGLNativeWindowType` (#1169)
+ - [Cocoa] Bugfix: Non-BMP Unicode codepoint input was reported as UTF-16
+   (#1635)
  - [X11] Bugfix: The CMake files did not check for the XInput headers (#1480)
  - [X11] Bugfix: Key names were not updated when the keyboard layout changed
    (#1462,#1528)
@@ -411,6 +414,7 @@ skills.
  - Ryogo Yoshimura
  - Lukas Zanner
  - Andrey Zholos
+ - Aihui Zhu
  - Santi Zupancic
  - Jonas Ådahl
  - Lasse Öörni
