@@ -155,6 +155,9 @@ information on what to include when reporting a bug.
  - [Win32] Bugfix: Some synthetic key events were reported as `GLFW_KEY_UNKNOWN`
    (#1623)
  - [Win32] Bugfix: Non-BMP Unicode codepoint input was reported as UTF-16
+ - [Win32] Bugfix: Monitor functions could return invalid values after
+   configuration change (#1761)
+ - [Win32] Bugfix: Initialization would segfault on Windows 8 (not 8.1) (#1775)
  - [Cocoa] Added support for `VK_EXT_metal_surface` (#1619)
  - [Cocoa] Added locating the Vulkan loader at runtime in an application bundle
  - [Cocoa] Moved main menu creation to GLFW initialization time (#1649)
@@ -252,6 +255,7 @@ skills.
  - Rok Breulj
  - Kai Burjack
  - Martin Capitanio
+ - Nicolas Caramelli
  - David Carlier
  - Arturo Castro
  - Chi-kwan Chan
@@ -358,6 +362,7 @@ skills.
  - Braden Pellett
  - Christopher Pelloux
  - Arturo J. Pérez
+ - Vladimir Perminov
  - Anthony Pesch
  - Orson Peters
  - Emmanuel Gil Peyrot
